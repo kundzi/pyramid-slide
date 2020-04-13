@@ -1,0 +1,35 @@
+<script>
+  let bckTimer
+  let intervalTimer
+
+  document.addEventListener('DOMContentLoaded', e => {
+
+    document.body.style.background = 'blue'
+    bckTimer = setTimeout(function () {
+      document.body.style.background = 'yellow'
+    }, 3000)
+    document
+      .querySelector('#cancel-timer')
+      .addEventListener('click', e => {
+        clearTimeout(bckTimer)
+        document.body.style.background = 'green'
+      })
+
+    const cancelIntervalButton = document
+      .querySelector('#cancel-interval')
+    let step = 0
+    intervalTimer = setInterval(() => {
+        cancelIntervalButton.style.background = step % 2 ? 'red' : 'grey'
+        step++
+      }, 1000
+    )
+    cancelIntervalButton.addEventListener('click', e => {
+      clearInterval(intervalTimer)
+    })
+  })
+</script>
+<button id="cancel-timer">Cancel timer</button>
+<button id="cancel-interval">Cancel interval</button>
+<p style="height: 100px">
+    Some content here
+</p>
