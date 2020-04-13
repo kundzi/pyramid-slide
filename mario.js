@@ -28,8 +28,22 @@ function drawPyramid (height) {
     const numEmptyBlocks = y - 1
     const numFilledBlocks = height + 2 - y
     const rowP = document.createElement('p')
-    const rowContent = '&nbsp;'.repeat(numEmptyBlocks) + '#'.repeat(numFilledBlocks)
-    rowP.innerHTML = rowContent
+
+    for (let i = 0; i < numEmptyBlocks; i++) {
+      const emptySpan = document.createElement('p')
+      emptySpan.innerHTML = '&nbsp;'
+      emptySpan.className = 'empty-span square-span'
+      emptySpan.textContent = 'e'
+      rowP.appendChild(emptySpan)
+    }
+
+    for (let i = 0; i < numFilledBlocks; i++) {
+      const filledSpan = document.createElement('p')
+      filledSpan.innerHTML = '&nbsp;'
+      filledSpan.className = 'filled-span square-span'
+      filledSpan.textContent = 'f'
+      rowP.appendChild(filledSpan)
+    }
     pyramidDiv.appendChild(rowP)
   }
 }

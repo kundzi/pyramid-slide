@@ -1,0 +1,20 @@
+p.square-span {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    padding: 2px;
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+p.empty-span {
+    background-color: deepskyblue;
+
+}
+p.filled-span {
+    background-color: darkred;
+}
