@@ -1,4 +1,5 @@
 printPyramid(10)
+drawPyramid(10)
 
 /*
  * printPyramid
@@ -16,6 +17,20 @@ function printPyramid (height) {
     const numEmptyBlocks = y - 1
     const numFilledBlocks = height + 2 - y
     console.log(' '.repeat(numEmptyBlocks) + '#'.repeat(numFilledBlocks))
+  }
+}
+
+function drawPyramid (height) {
+  document.getElementById('construction').style.display = 'none'
+  const pyramidDiv = document.getElementById('pyramid')
+
+  for (let y = height; y > 0; y--) {
+    const numEmptyBlocks = y - 1
+    const numFilledBlocks = height + 2 - y
+    const rowP = document.createElement('p')
+    const rowContent = ' '.repeat(numEmptyBlocks) + '#'.repeat(numFilledBlocks)
+    rowP.textContent = rowContent
+    pyramidDiv.appendChild(rowP)
   }
 }
 
